@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | BALQIS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="shop-navbar">
+        <a href="cart.html" class="header-cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span id="cartCounter">0</span>
+        </a>
+        <a href="shop.html" class="back-link">← Continue Shopping</a>
+
+        <div class="shop-logo">
+            BALQIS
+        </div>
+
+        <div></div>
+    </nav>
+
+    <section class="cart-page">
+
+        <h1>Your Cart</h1>
+
+        <div class="cart-item" id="cartItem">
+            <div id="emptyCart" style="display:none;">
+
+                <h2>Your cart is empty</h2>
+
+                <p>Looks like you haven't added anything yet.</p>
+
+                <a href="shop.html" class="checkout-btn">
+        Continue Shopping
+    </a>
+
+            </div>
+
+            <img src="assets/images/bilde3.jpg" alt="Dress">
+
+            <div class="cart-info">
+                <h3>Signature Dress</h3>
+                <p>Size: <span id="cartSize">M</span></p>
+                <p>Color: <span id="cartColor">Brown</span></p>
+                <p>Quantity: <span id="cartQuantity">1</span></p>
+
+                <strong>
+    Total: <span id="cartTotal">899</span> NOK
+</strong>
+
+                <button id="removeCartBtn" class="remove-cart">
+    Remove Item
+</button>
+
+            </div>
+
+        </div>
+
+        <div class="cart-summary">
+
+            <h2>Order Summary</h2>
+
+            <p>Subtotal: <span id="cartSubtotal">899</span> NOK</p>
+
+            <a href="#" class="checkout-btn">
+                CHECKOUT
+            </a>
+
+        </div>
+
+    </section>
+
+    <script>
+        const savedQuantity = localStorage.getItem("cartQuantity") || 1;
+        document.getElementById("cartQuantity").textContent = savedQuantity;
+    </script>
+
+    <script>
+        const quantity = Number(localStorage.getItem("cartQuantity")) || 1;
+        const price = Number(localStorage.getItem("cartPrice")) || 899;
+
+        const total = quantity * price;
+
+        document.getElementById("cartQuantity").textContent = quantity;
+        document.getElementById("cartTotal").textContent = total;
+        document.getElementById("cartSubtotal").textContent = total;
+    </script>
+
+    <script>
+        const cartCounter = document.getElementById("cartCounter");
+
+        if (cartCounter) {
+            const savedCartCount =
+                localStorage.getItem("cartCount") || 0;
+
+            cartCounter.textContent = savedCartCount;
+        }
+    </script>
+
+    <script>
+        const cartQuantity = Number(localStorage.getItem("cartQuantity")) || 0;
+
+        if (quantity === 0) {
+
+            document.getElementById("cartItem").style.display = "none";
+
+            document.getElementById("emptyCart").style.display = "block";
+
+        }
+    </script>
+
+    <script>
+        const removeBtn = document.getElementById("removeCartBtn");
+
+        if (removeBtn) {
+
+            removeBtn.addEventListener("click", () => {
+
+                localStorage.removeItem("cartQuantity");
+                localStorage.removeItem("cartCount");
+
+                location.reload();
+
+            });
+
+        }
+    </script>
+    <script>
+        document.getElementById("cartSize").textContent =
+            localStorage.getItem("cartSize") || "M";
+
+        document.getElementById("cartColor").textContent =
+            localStorage.getItem("cartColor") || "Brown";
+    </script>
+
+</body>
+
+</html>

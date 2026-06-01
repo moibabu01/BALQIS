@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | BALQIS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="top-banner">
+        THE FIRST DROP IS COMING SOON • FREE SHIPPING ON LAUNCH WEEK
+    </div>
+
+    <nav class="shop-navbar">
+
+        <a href="index.html" class="back-link">
+            ← Back
+        </a>
+
+        <div class="shop-logo">
+            BALQIS
+        </div>
+
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-heart"></i>
+            <a href="cart.html" class="header-cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cartCounter">0</span>
+            </a>
+        </div>
+
+    </nav>
+
+    <section class="shop-page">
+
+        <aside class="shop-filter">
+
+            <h3>SORT BY</h3>
+
+            <label><input type="radio" name="sort"> Price: Low to High</label>
+            <label><input type="radio" name="sort"> Price: High to Low</label>
+            <label><input type="radio" name="sort" checked> Relevancy</label>
+            <label><input type="radio" name="sort"> Newest</label>
+
+            <hr>
+
+            <h3>PRODUCT TYPE</h3>
+
+            <p>Dresses</p>
+            <p>Hoodies</p>
+            <p>T-Shirts</p>
+
+            <hr>
+
+            <h3>SIZE</h3>
+
+            <p>XS</p>
+            <p>S</p>
+            <p>M</p>
+            <p>L</p>
+
+        </aside>
+
+        <main class="shop-products">
+
+            <h1>Dresses</h1>
+
+            <p class="shop-count">
+                Viewing 1 - 6 of 18 products
+            </p>
+
+            <div class="shop-grid">
+
+                <a href="product.html" class="shop-card">
+                    <span class="product-badge">FIRST DROP</span>
+                    <button class="heart-btn">♡</button>
+                    <img src="assets/images/bilde3.jpg" alt="Signature Dress">
+                    <h3>Signature Dress</h3>
+                    <p>Brown</p>
+                    <strong>899 NOK</strong>
+                </a>
+
+                <div class="shop-card coming-product">
+                    <span class="product-badge">COMING SOON</span>
+                    <img src="assets/images/bilde2.jpg" alt="Coming Soon">
+                    <h3>New Piece</h3>
+                    <p>More details soon</p>
+                    <strong>Coming Soon</strong>
+                </div>
+
+                <div class="shop-card coming-product">
+                    <span class="product-badge">COMING SOON</span>
+                    <img src="assets/images/bilder.jpg" alt="Coming Soon">
+                    <h3>New Piece</h3>
+                    <p>More details soon</p>
+                    <strong>Coming Soon</strong>
+
+                </div>
+
+                <div class="shop-card coming-product">
+                    <span class="product-badge">COMING SOON</span>
+                    <img src="assets/images/bilde2.jpg" alt="Coming Soon">
+                    <h3>New Piece</h3>
+                    <p>More details soon</p>
+                    <strong>Coming Soon</strong>
+                </div>
+
+                <div class="shop-card coming-product">
+                    <span class="product-badge">COMING SOON</span>
+                    <img src="assets/images/bilde2.jpg" alt="Coming Soon">
+                    <h3>New Piece</h3>
+                    <p>More details soon</p>
+                    <strong>Coming Soon</strong>
+                </div>
+
+                <div class="shop-card coming-product">
+                    <span class="product-badge">COMING SOON</span>
+                    <img src="assets/images/bilde2.jpg" alt="Coming Soon">
+                    <h3>New Piece</h3>
+                    <p>More details soon</p>
+                    <strong>Coming Soon</strong>
+                </div>
+
+                <div class="shop-card coming-product">
+                    <span class="product-badge">COMING SOON</span>
+                    <img src="assets/images/bilde2.jpg" alt="Coming Soon">
+                    <h3>New Piece</h3>
+                    <p>More details soon</p>
+                    <strong>Coming Soon</strong>
+                </div>
+
+            </div>
+
+            <div class="page-control">
+                <button>‹</button>
+                <span>Page 1 of 3</span>
+                <button>›</button>
+            </div>
+
+        </main>
+
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+        const cartCounter = document.getElementById("cartCounter");
+
+        if (cartCounter) {
+            const savedCartCount =
+                localStorage.getItem("cartCount") || 0;
+
+            cartCounter.textContent = savedCartCount;
+        }
+    </script>
+
+</body>
+
+</html>
